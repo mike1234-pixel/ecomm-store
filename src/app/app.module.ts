@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { NgRedux, NgReduxModule } from 'ng2-redux';
+import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { IAppState, rootReducer } from './store';
 import { initialState } from './store';
 
@@ -27,9 +27,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class AppModule {
 
-  constructor(ngRedux: NgRedux<IAppState>) {
+  constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension) {
     // pass root reducer and initial store as config
-    ngRedux.configureStore(rootReducer, initialState)
+    const enhancers = isDevMode() ? [devTools.enhancer()] : []
+
+    ngRedux.configureStore(rootReducer, initialState, [], enhancers)
   }
 
  }
