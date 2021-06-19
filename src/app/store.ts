@@ -7,7 +7,7 @@ export interface IAppState {
     counter: number
 }
 
-export const initialState: IAppState = {
+export const INITIAL_STATE: IAppState = {
     counter: 0
 }
 

@@ -1,10 +1,11 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { IAppState, rootReducer } from './store';
-import { initialState } from './store';
+import { INITIAL_STATE } from './store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppRoutingModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatIconModule,
     BrowserAnimationsModule,
     NgReduxModule
   ],
@@ -31,7 +33,7 @@ export class AppModule {
     // pass root reducer and initial store as config
     const enhancers = isDevMode() ? [devTools.enhancer()] : []
 
-    ngRedux.configureStore(rootReducer, initialState, [], enhancers)
+    ngRedux.configureStore(rootReducer, INITIAL_STATE, [], enhancers)
   }
 
  }
