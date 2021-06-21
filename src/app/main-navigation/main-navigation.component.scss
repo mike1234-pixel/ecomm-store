@@ -19,15 +19,20 @@
     position: absolute;
     width: 100%;
     z-index: 9;
+    padding-bottom: 30px;
     ul {
       margin: 0;
       li > a {
-        padding: 20px 30px 20px 0;
+        padding: 20px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
         color: #fff;
         text-decoration: none;
+        .mat-icon {
+          height: initial !important;
+          width: initial !important;
+        }
       }
     }
   }
@@ -69,6 +74,11 @@
 }
 
 .active {
-  color: red !important;
-  font-weight: 900 !important;
+  transition: all 0.2s;
+  color: #95969d !important;
+  font-weight: 400 !important;
+  font-size: 90px;
+  .material-icons {
+    font-size: 70px !important;
+  }
 }

@@ -11,7 +11,8 @@ import { TOGGLE_SUB_NAV } from '../actions';
 export class MainNavigationComponent {
 
   @select() subNavVisible: any
-  subNavHidden = true
+  subNavHidden: boolean = true
+  iconSize: string = '50px'
 
   constructor(private ngRedux: NgRedux<IAppState>) {  }
 
