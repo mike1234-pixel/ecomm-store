@@ -4,7 +4,7 @@
 
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
-$hamburger-layer-color: white !default;
+$hamburger-layer-color: #d9ed92 !default;
 $hamburger-hover-opacity: 1 !default;
 $hamburger-padding-x: 0 !default;
 $hamburger-padding-y: 0 !default;
@@ -17,6 +17,31 @@ $hamburger-padding-y: 0 !default;
 // typography
 $title-font: "Lato", sans-serif;
 $body-font: "Lato", sans-serif;
+
+// colors
+$color1HEX: #d9ed92;
+$color1RGB: rgb(217, 237, 146);
+$color2HEX: #b5e48c;
+$color2RGB: rgb(181, 228, 140);
+$color3HEX: #99d98c;
+$color3RGB: rgb(153, 217, 140);
+$color4HEX: #76c893;
+$color4RGB: rgb(118, 200, 147);
+$color5HEX: #52b69a;
+$color5RGB: rgb(82, 182, 154);
+$color6HEX: #34a0a4;
+$color6RGB: rgb(52, 160, 164);
+$color7HEX: #168aad;
+$color7RGB: rgb(22, 138, 173);
+$color8HEX: #1a759f;
+$color8RGB: rgb(26, 117, 159);
+$color9HEX: #1e6091;
+$color9RGB: rgb(30, 96, 145);
+$color10HEX: #184e77;
+$color10RGB: rgb(24, 78, 119);
+
+$colorTextLight: #fff;
+$colorTextDark: #000;
 
 html,
 body {

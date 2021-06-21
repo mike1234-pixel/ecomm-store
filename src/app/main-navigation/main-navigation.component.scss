@@ -1,6 +1,10 @@
+@import "../../styles.scss";
+
 .main-navigation {
   position: relative;
   z-index: 10;
+  background-color: $color9HEX;
+  border-bottom: 1px solid $color1HEX;
   &__row {
     display: flex;
     justify-content: space-between;
@@ -10,16 +14,16 @@
     }
   }
   &__home-link {
-    color: #fff;
+    color: $color1HEX;
     text-decoration: none;
   }
   &__subnav {
-    background-color: violet;
-    color: white;
+    background-color: $color9HEX;
+    color: $color1HEX;
     position: absolute;
     width: 100%;
     z-index: 9;
-    padding-bottom: 30px;
+    padding: 20px 0;
     ul {
       margin: 0;
       li > a {
@@ -27,7 +31,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #fff;
+        color: $color1HEX;
         text-decoration: none;
         .mat-icon {
           height: initial !important;
@@ -75,7 +79,6 @@
 
 .active {
   transition: all 0.2s;
-  color: #95969d !important;
   font-weight: 400 !important;
   font-size: 90px;
   .material-icons {
