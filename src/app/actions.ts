@@ -1,1 +1,2 @@
 export const INCREMENT = 'INCREMENT'
+export const TOGGLE_SUB_NAV = 'TOGGLE_SUB_NAV'

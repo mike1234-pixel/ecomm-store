@@ -1,0 +1,63 @@
+.main-navigation {
+  position: relative;
+  z-index: 10;
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    padding: 60px 0;
+    button {
+      display: flex;
+    }
+  }
+  &__subnav {
+    background-color: violet;
+    color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    ul {
+      margin: 0;
+      li {
+        padding: 20px 30px 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.hideSubNav {
+  animation: slide-out 0.3s forwards;
+  animation-timing-function: ease-out;
+}
+.showSubNav {
+  animation: slide-in 0.3s forwards;
+  animation-timing-function: ease-in;
+}
+
+.hide {
+  display: none;
+}

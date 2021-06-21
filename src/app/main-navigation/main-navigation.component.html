@@ -1,0 +1,27 @@
+<nav>
+    <mat-toolbar role="heading" color="primary" class="main-navigation">
+        <mat-toolbar-row  class="main-navigation__row">
+            <span>My App</span>
+            <!-- <button mat-icon-button aria-label="menu icon" (click)="toggleSubNav()">
+              <mat-icon>menu</mat-icon> -->
+
+              <button class="hamburger hamburger--elastic" type="button" (click)="toggleSubNav()" [class.is-active]="( subNavVisible | async )">
+                <span class="hamburger-box">
+                  <span class="hamburger-inner"></span>
+                </span>
+              </button>
+            <!-- </button> -->
+          </mat-toolbar-row>
+      </mat-toolbar>
+</nav>
+<nav class="main-navigation__subnav" [class.hideSubNav]="( subNavVisible | async )" [class.showSubNav]="!( subNavVisible | async )" [class.hide]="subNavRemove">
+    <ul>
+        <li matRipple>Painting <mat-icon>palette</mat-icon></li>
+        <li matRipple>Drawing <mat-icon>edit</mat-icon></li>
+        <li matRipple>Canvas <mat-icon>note</mat-icon></li>
+        <li matRipple>Surfaces <mat-icon>dashboard</mat-icon></li>
+        <li matRipple>Blog <mat-icon>feed</mat-icon></li>
+        <li matRipple>Shops <mat-icon>store</mat-icon></li>
+        <li matRipple>Contact <mat-icon>phone</mat-icon></li>
+    </ul>
+</nav>

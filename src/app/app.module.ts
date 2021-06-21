@@ -1,28 +1,33 @@
+import { environment } from 'src/environments/environment';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatButtonModule } from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { IAppState, rootReducer } from './store';
 import { INITIAL_STATE } from './store';
-
+//import { AngularFireModule } from 'angularfire2'
+//import { AngularFireDatabaseModule } from 'angularfire2/database'
+// import { AngularFireAuthModule } from 'angularfire2/auth'
+import { MatComponentsModule } from './mat-components.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MainNavigationComponent } from './main-navigation/main-navigation.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainNavigationComponent,
   ],
   imports: [
     BrowserModule,
+    //AngularFireModule.initializeApp(environment.firebase),
+    //AngularFireDatabaseModule,
+    // AngularFireAuthModule,
     AppRoutingModule,
-    MatButtonModule,
-    MatCheckboxModule,
-    MatIconModule,
+    MatComponentsModule,
     BrowserAnimationsModule,
-    NgReduxModule
+    NgReduxModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
