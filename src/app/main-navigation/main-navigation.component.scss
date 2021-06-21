@@ -9,6 +9,10 @@
       display: flex;
     }
   }
+  &__home-link {
+    color: #fff;
+    text-decoration: none;
+  }
   &__subnav {
     background-color: violet;
     color: white;
@@ -17,11 +21,13 @@
     z-index: 9;
     ul {
       margin: 0;
-      li {
+      li > a {
         padding: 20px 30px 20px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        color: #fff;
+        text-decoration: none;
       }
     }
   }
@@ -60,4 +66,9 @@
 
 .hide {
   display: none;
+}
+
+.active {
+  color: red !important;
+  font-weight: 900 !important;
 }

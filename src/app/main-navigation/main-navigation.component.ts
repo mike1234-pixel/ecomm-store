@@ -11,13 +11,12 @@ import { TOGGLE_SUB_NAV } from '../actions';
 export class MainNavigationComponent {
 
   @select() subNavVisible: any
-  subNavRemove = true
-  // pink = 'rgba(127, 0, 255, 0.5)'
+  subNavHidden = true
 
   constructor(private ngRedux: NgRedux<IAppState>) {  }
 
   toggleSubNav() {
-    this.subNavRemove ? this.subNavRemove = false : null // val only needs reassigning once
+    this.subNavHidden ? this.subNavHidden = false : null // val only needs reassigning once
     this.ngRedux.dispatch({ type: TOGGLE_SUB_NAV })
   }
 
