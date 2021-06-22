@@ -1,13 +1,17 @@
 import { environment } from 'src/environments/environment';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// ---------------------------------------------- redux
 import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
 import { IAppState, rootReducer } from './store';
 import { INITIAL_STATE } from './store';
+// ---------------------------------------------- router
 import { RouterModule } from '@angular/router';
-//import { AngularFireModule } from 'angularfire2'
-//import { AngularFireDatabaseModule } from 'angularfire2/database'
-// import { AngularFireAuthModule } from 'angularfire2/auth'
+// ---------------------------------------------- firebase
+import { AngularFireModule } from '@angular/fire'
+import { AngularFireDatabaseModule } from '@angular/fire/database'
+import { AngularFireAuthModule } from '@angular/fire/auth'
+// ---------------------------------------------- angular material
 import { MatComponentsModule } from './mat-components.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,9 +45,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    //AngularFireModule.initializeApp(environment.firebase),
-    //AngularFireDatabaseModule,
-    // AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
     AppRoutingModule,
     MatComponentsModule,
     BrowserAnimationsModule,
