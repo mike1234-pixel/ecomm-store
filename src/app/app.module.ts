@@ -27,6 +27,13 @@ import { BlogPostComponent } from './pages/blog-post/blog-post.component';
 import { StoresComponent } from './pages/stores/stores.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { OrderSuccessComponent } from './pages/order-success/order-success.component';
+import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
+import { AdminProductsComponent } from './pages/admin/admin-products/admin-products.component';
+import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -42,6 +49,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     ContactComponent,
     BlogPostComponent,
     NotFoundComponent,
+    ShoppingCartComponent,
+    CheckoutComponent,
+    OrderSuccessComponent,
+    MyOrdersComponent,
+    AdminProductsComponent,
+    AdminOrdersComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,8 +77,13 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
       { path: 'blog', component: BlogComponent},
       { path: 'stores', component: StoresComponent},
       { path: 'contact', component: ContactComponent},
+      { path: 'login', component: LoginComponent},
+      { path: 'shopping-cart', component: ShoppingCartComponent},
+      { path: 'my-orders', component: MyOrdersComponent},
+      { path: 'checkout', component: CheckoutComponent},
+      { path: 'admin/products', component: AdminProductsComponent},
+      { path: 'admin/orders', component: AdminOrdersComponent},
       { path: '**', component: NotFoundComponent},
-      
 
     ])
   ],
