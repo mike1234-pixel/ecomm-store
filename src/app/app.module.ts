@@ -34,6 +34,7 @@ import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AdminProductsComponent } from './pages/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './pages/login/login.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -87,7 +88,7 @@ import { LoginComponent } from './pages/login/login.component';
 
     ])
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
