@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NgRedux, select } from "ng2-redux";
 import { IAppState } from '../store';
-import { TOGGLE_SUB_NAV } from '../actions';
+import { TOGGLE_SUB_NAV, TOGGLE_DROPDOWN } from '../actions';
 
 @Component({
   selector: 'main-navigation',
@@ -11,7 +11,9 @@ import { TOGGLE_SUB_NAV } from '../actions';
 export class MainNavigationComponent {
 
   @select() subNavVisible: any
+  @select() dropdownVisible: any
   subNavHidden: boolean = true
+  dropdownHidden: boolean = true
   iconSize: string = '50px'
 
   constructor(private ngRedux: NgRedux<IAppState>) {  }
@@ -19,6 +21,11 @@ export class MainNavigationComponent {
   toggleSubNav() {
     this.subNavHidden ? this.subNavHidden = false : null // val only needs reassigning once
     this.ngRedux.dispatch({ type: TOGGLE_SUB_NAV })
+  }
+
+  toggleDropdown() {
+    this.dropdownHidden ? this.dropdownHidden = false : null // val only needs reassigning once
+    this.ngRedux.dispatch({ type: TOGGLE_DROPDOWN })
   }
 
 }

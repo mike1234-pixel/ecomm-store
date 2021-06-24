@@ -17,6 +17,50 @@
     color: $color1HEX;
     text-decoration: none;
   }
+  &__shopping-bag-link {
+    margin-left: 30px;
+    cursor: pointer;
+    color: $color1HEX;
+    .mat-icon {
+      height: initial;
+      width: initial;
+    }
+  }
+  &__shopping-bag-icon {
+    font-size: 40px;
+  }
+  &__shopping-bag-dropdown {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background: $color1HEX;
+    color: $color10HEX;
+    padding: 30px;
+    border-radius: 10px;
+    &::after {
+      bottom: 100%;
+      left: 12%;
+      border: solid transparent;
+      content: "";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-bottom-color: #d9ed92;
+      border-width: 20px;
+      margin-left: -20px;
+    }
+    ul {
+      margin-block-start: 10px;
+      margin-block-end: 10px;
+      li {
+        a {
+          color: $color10HEX;
+          text-decoration: none;
+        }
+      }
+    }
+  }
   &__subnav {
     background-color: $color9HEX;
     color: $color1HEX;
@@ -71,6 +115,43 @@
 .showSubNav {
   animation: slide-in 0.3s forwards;
   animation-timing-function: ease-in;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 0;
+    display: none;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    display: inline-block;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 1;
+    display: inline-block;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    display: none;
+    transform: scale(0);
+  }
+}
+
+.hideDropdown {
+  animation: fade-out 0.3s forwards;
+  animation-timing-function: ease-out;
+  transform-origin: 15% top;
+}
+.showDropdown {
+  animation: fade-in 0.3s forwards;
+  animation-timing-function: ease-in;
+  transform-origin: 15% top;
 }
 
 .hide {
