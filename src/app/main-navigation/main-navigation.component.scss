@@ -17,7 +17,8 @@
     color: $color1HEX;
     text-decoration: none;
   }
-  &__shopping-bag-link {
+  &__shopping-bag-link,
+  &__login-link {
     margin-left: 30px;
     cursor: pointer;
     color: $color1HEX;
@@ -26,8 +27,17 @@
       width: initial;
     }
   }
-  &__shopping-bag-icon {
+  &__shopping-bag-icon,
+  &__login-icon {
     font-size: 40px;
+    &:hover {
+      transition: all 0.2s;
+      transform: scale(1.2);
+    }
+    &:not(:hover) {
+      transition: all 0.2s;
+      transform: scale(1);
+    }
   }
   &__shopping-bag-dropdown {
     position: absolute;
@@ -57,6 +67,16 @@
         a {
           color: $color10HEX;
           text-decoration: none;
+          display: inline-block;
+          width: 100%;
+          &:hover {
+            background: $color10HEX;
+            color: $color1HEX;
+            transition: all 0.2s;
+          }
+          &:not(:hover) {
+            transition: 1s;
+          }
         }
       }
     }

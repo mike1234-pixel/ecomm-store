@@ -1,18 +1,18 @@
 <nav>
     <mat-toolbar role="heading" color="primary" class="main-navigation">
         <div class="container">
-            <mat-toolbar-row  class="main-navigation__row">
+            <!-- <mat-toolbar-row  class="main-navigation__row"> -->
                 <div>
                     <span><a routerLink="/" class="main-navigation__home-link">Arts Store</a></span>
-                    <a routerLink="/login" *ngIf="!auth.user">Login</a>
+                    <a routerLink="/login" *ngIf="!auth.user" class="main-navigation__login-link"><mat-icon class="main-navigation__login-icon">login</mat-icon></a>
                     <span style="position: relative;" *ngIf="auth.user">
                     <span class="main-navigation__shopping-bag-link" (click)="toggleDropdown()"><mat-icon class="material-icons-outlined main-navigation__shopping-bag-icon">shopping_bag</mat-icon></span>
                     <div class="main-navigation__shopping-bag-dropdown" [class.hideDropdown]="( dropdownVisible | async )" [class.showDropdown]="!( dropdownVisible | async )" [class.hide]="dropdownHidden">
                         <ul>
                             <li matRipple><a routerLink="/shopping-cart">Shopping Cart</a></li>
                             <li matRipple><a routerLink="/checkout">Checkout</a></li>
-                            <li matRipple><a routerLink="/my-orders">My Order</a></li>
-                            <li matRipple (click)="logout()">Log Out</li>
+                            <li matRipple><a routerLink="/my-orders">My Orders</a></li>
+                            <li matRipple (click)="logout()" class="logout-link"><a>Log Out</a></li>
                         </ul>
                     </div>
                     </span>
@@ -22,7 +22,7 @@
                     <span class="hamburger-inner"></span>
                     </span>
                 </button>
-            </mat-toolbar-row>
+            <!-- </mat-toolbar-row> -->
         </div>
       </mat-toolbar>
 </nav>
