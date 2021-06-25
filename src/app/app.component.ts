@@ -15,8 +15,6 @@ export class AppComponent implements OnDestroy {
   title = 'ecomm-store';
   productsPainting: any
   productsPaintingSubscription: any
-  // select decorator allows you to subscribe to selected slices of the state, must use async pipe in template
-  @select() counter: any
 
   constructor(private ngRedux: NgRedux<IAppState>, private firestore: AngularFirestore) {
   } 
@@ -24,14 +22,12 @@ export class AppComponent implements OnDestroy {
   ngOnInit() {
     this.productsPainting = this.firestore.collection('products-painting').valueChanges() // returns Observable
     this.productsPaintingSubscription = this.productsPainting.subscribe((res: any)=>{
+      // save firestore data to redux
       this.ngRedux.dispatch({ type: SAVE_PAINTING_PRODUCTS , payload: res})
-    }) // subscribe for real-time db updates and return json
-    console.log(this.productsPaintingSubscription)
-    
+      console.log(res)
+    })     
   }
 
-  // when navigating away from a component that is subscribe to a db, 
-  // you need to unsubscribe to prevent memory leaks
   ngOnDestroy() {
     this.productsPaintingSubscription.unsubscribe()
   }

@@ -1,7 +1,7 @@
 <nav>
     <mat-toolbar role="heading" color="primary" class="main-navigation">
         <div class="container">
-            <!-- <mat-toolbar-row  class="main-navigation__row"> -->
+            <mat-toolbar-row  class="main-navigation__row">
                 <div>
                     <span><a routerLink="/" class="main-navigation__home-link">Arts Store</a></span>
                     <a routerLink="/login" *ngIf="!auth.user" class="main-navigation__login-link"><mat-icon class="main-navigation__login-icon">login</mat-icon></a>
@@ -22,7 +22,7 @@
                     <span class="hamburger-inner"></span>
                     </span>
                 </button>
-            <!-- </mat-toolbar-row> -->
+            </mat-toolbar-row>
         </div>
       </mat-toolbar>
 </nav>

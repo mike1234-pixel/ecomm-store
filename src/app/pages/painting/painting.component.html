@@ -1,1 +1,11 @@
-<p>painting works!</p>
+<div  *ngIf="paintingProducts.length == 0; then noProducts else productsList"></div>
+<ng-template #noProducts>
+    No products to show
+</ng-template>
+<ng-template #productsList>
+    <h3>Painting Products</h3>
+    <!-- IF THE DATA IS STORED IN REDUX YOU NEED TO USE THE ASYNC PIPE!  -->
+    <ul>
+        <li *ngFor="let product of paintingProducts | async">{{ product.name }}</li>
+    </ul>
+</ng-template>

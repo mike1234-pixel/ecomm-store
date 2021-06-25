@@ -36,6 +36,7 @@ import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.co
 import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     DrawingComponent,
     CanvasComponent,
     SurfacesComponent,
+    PaintingComponent,
     BlogComponent,
     StoresComponent,
     ContactComponent,
@@ -61,6 +63,7 @@ import { AuthGuardService } from './services/auth-guard.service';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,

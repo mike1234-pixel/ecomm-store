@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NgRedux, select } from "ng2-redux";
 import { IAppState } from '../store';
 import { TOGGLE_SUB_NAV, TOGGLE_DROPDOWN } from '../actions';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { OnDestroy } from '@angular/core';
 import { AuthService } from '../services/auth.service';
 
