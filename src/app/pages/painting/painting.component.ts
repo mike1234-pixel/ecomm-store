@@ -10,14 +10,6 @@ import { select } from "ng2-redux";
 export class PaintingComponent {
 
   @select() paintingProducts: any
-//   paintingProducts = [
-//     {id: 1, name:'Superman'},
-//     {id: 2, name:'Batman'},
-//     {id: 5, name:'BatGirl'},
-//     {id: 3, name:'Robin'},
-//     {id: 4, name:'Flash'}
-// ];
-
 
   constructor() { 
    

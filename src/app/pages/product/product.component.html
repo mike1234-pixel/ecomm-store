@@ -1,0 +1,7 @@
+<div *ngFor="let product of paintingProducts | async">
+    <div *ngIf="(product.name | slugify) === routeParam">
+        <p>{{ product.name }}</p>
+        <p>{{ product.description }}</p>
+    </div>
+
+</div>

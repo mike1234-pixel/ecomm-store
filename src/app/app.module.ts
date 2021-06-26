@@ -37,6 +37,11 @@ import { LoginComponent } from './pages/login/login.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { CommonModule } from '@angular/common';
+import { MarkedPipe } from './marked.pipe';
+import { SummaryPipe } from './summary.pipe';
+import { ProductComponent } from './pages/product/product.component';
+import { SlugifyPipe } from './slugify.pipe';
+
 
 
 @NgModule({
@@ -60,6 +65,10 @@ import { CommonModule } from '@angular/common';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
+    MarkedPipe,
+    SummaryPipe,
+    ProductComponent,
+    SlugifyPipe,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +82,7 @@ import { CommonModule } from '@angular/common';
     NgReduxModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
+      { path: 'painting/:product', component: ProductComponent},
       { path: 'painting', component: PaintingComponent},
       { path: 'drawing', component: DrawingComponent},
       { path: 'canvas', component: CanvasComponent},
