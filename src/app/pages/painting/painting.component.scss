@@ -1,5 +1,9 @@
 @import "../../../styles.scss";
 
+.painting-page-container {
+  background: rgba(173, 67, 22, 0.2);
+}
+
 .grid-container {
   display: grid;
   grid-gap: 30px 30px;

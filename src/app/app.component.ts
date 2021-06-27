@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NgRedux, select } from "ng2-redux" 
-import { IAppState  } from './store';
+import { IAppState  } from './redux/store';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { SAVE_PAINTING_PRODUCTS } from "./actions"
+import { SAVE_PAINTING_PRODUCTS } from "./redux/actions"
 
 
 

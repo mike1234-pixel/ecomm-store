@@ -1,22 +1,23 @@
+// ---------------------------------------------- angular
 import { environment } from 'src/environments/environment';
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 // ---------------------------------------------- redux
 import { NgRedux, NgReduxModule, DevToolsExtension } from 'ng2-redux';
-import { IAppState, rootReducer } from './store';
-import { INITIAL_STATE } from './store';
+import { IAppState, rootReducer } from './redux/store';
+import { INITIAL_STATE } from './redux/store';
 // ---------------------------------------------- router
 import { RouterModule } from '@angular/router';
 // ---------------------------------------------- firebase
 import { AngularFireModule } from '@angular/fire'
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { AngularFireAuthModule } from '@angular/fire/auth'
-// ---------------------------------------------- angular material
-import { MatComponentsModule } from './mat-components.module';
-import { AppRoutingModule } from './app-routing.module';
+// ---------------------------------------------- components
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavigationComponent } from './main-navigation/main-navigation.component';
+import { MainNavigationComponent } from './components/main-navigation/main-navigation.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PaintingComponent } from './pages/painting/painting.component'
 import { DrawingComponent } from './pages/drawing/drawing.component';
@@ -34,16 +35,17 @@ import { MyOrdersComponent } from './pages/my-orders/my-orders.component';
 import { AdminProductsComponent } from './pages/admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './pages/admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ProductComponent } from './pages/product/product.component';
+// ---------------------------------------------- modules
+import { AppRoutingModule } from './modules/app-routing.module';
+import { MatComponentsModule } from './modules/mat-components.module';
+// ---------------------------------------------- services
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
-import { CommonModule } from '@angular/common';
-import { MarkedPipe } from './marked.pipe';
-import { SummaryPipe } from './summary.pipe';
-import { ProductComponent } from './pages/product/product.component';
-import { SlugifyPipe } from './slugify.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
+// ---------------------------------------------- pipes
+import { MarkedPipe } from './pipes/marked.pipe';
+import { SummaryPipe } from './pipes/summary.pipe';
+import { SlugifyPipe } from './pipes/slugify.pipe';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,7 @@ import { ReactiveFormsModule } from '@angular/forms';
       { path: 'admin/orders', component: AdminOrdersComponent},
       { path: '**', component: NotFoundComponent},
 
-    ])
+    ]),
   ],
   providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent]

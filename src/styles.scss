@@ -13,6 +13,7 @@ $hamburger-padding-y: 0 !default;
 @import "~hamburgers/_sass/hamburgers/hamburgers.scss";
 
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Benne&display=swap");
 
 // typography
 $title-font: "Lato", sans-serif;
@@ -135,5 +136,16 @@ ul {
 // general styles
 
 .page-title {
-  margin: 60px 0;
+  padding: 60px 0;
+  font-weight: 400;
+}
+
+.sub-title {
+  font-weight: 400;
+  font-size: 24px;
+  padding-bottom: 30px;
+}
+
+.serif {
+  font-family: "Benne", Times, serif;
 }

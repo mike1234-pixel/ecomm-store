@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container painting-page-container">
 
     <div  *ngIf="paintingProducts.length == 0; then noProducts else productsList"></div>
     <ng-template #noProducts>
@@ -12,14 +12,14 @@
                 <!-- <img src="{{product.productImages[0].src}}" alt="{{product.productImages[0].alt}}"> -->
                 <img src="{{product.productImages[0]}}" alt="{{product.name}}">
                 <h2>{{ product.name }}</h2>
-                <h3 class="card__price">£{{ product.price }}</h3>
+                <h3 class="card__price">{{ product.price | currency: 'GBP'  }}</h3>
                 <ng-template [ngIf]="product.priceWas">
                     <span>was: </span>
-                    <h3 class="card__was-price">£{{ product.priceWas }}</h3>
+                    <h3 class="card__was-price">{{ product.priceWas | currency: 'GBP'  }}</h3>
                 </ng-template>
                 <ng-template [ngIf]="product.priceRRP">
                     <span>rrp: </span>
-                    <h3 class="card__rrp-price">£{{ product.priceRRP }}</h3>
+                    <h3 class="card__rrp-price">{{ product.priceRRP | currency: 'GBP'  }}</h3>
                 </ng-template>
                 <hr>
                 <p [innerHTML]="product.description | marked | summary:100"></p>

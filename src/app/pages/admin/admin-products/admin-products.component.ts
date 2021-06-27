@@ -92,6 +92,8 @@ export class AdminProductsComponent {
        rating: parseInt(formData.rating),
        productImages: productImagesData
      })
+
+     this.addProductForm.reset();
    }
 
 }
