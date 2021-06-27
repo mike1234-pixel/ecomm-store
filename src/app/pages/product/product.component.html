@@ -1,7 +1,38 @@
-<div *ngFor="let product of paintingProducts | async">
-    <div *ngIf="(product.name | slugify) === routeParam">
-        <p>{{ product.name }}</p>
-        <p>{{ product.description }}</p>
+<div class="container">
+
+    <div *ngFor="let product of paintingProducts | async">
+        <div *ngIf="(product.name | slugify) === routeParam">
+            <h3>{{ product.name }}</h3>
+            <h3>Description</h3>
+            <p>{{ product.description }}</p>
+            <div *ngFor="let image of product.productImages; index as i">
+                    <img src="{{image}}" alt="{{product.name}}" >
+            </div>
+            <p *ngIf="( product.quantityInStock ) === 0">Sorry, this product is out of stock.</p>
+            <p *ngIf="( product.quantityInStock )> 0">{{ product.quantityInStock }} units in stock.</p>
+            <h3>Rating</h3>
+            <mat-icon *ngFor="let i of [].constructor( product.rating )" class="card__rating-star-icon">star_border</mat-icon>
+        </div>
     </div>
 
 </div>
+
+watercolour box: 
+https://ecomm-store.s3.eu-west-2.amazonaws.com/brushes-box.jpeg
+https://ecomm-store.s3.eu-west-2.amazonaws.com/brushes-box-2.jpeg
+https://ecomm-store.s3.eu-west-2.amazonaws.com/brushes-box-3.jpeg
+
+watercolour tubes
+https://ecomm-store.s3.eu-west-2.amazonaws.com/paint-tubes.jpeg
+
+watercolour pan & brush
+https://ecomm-store.s3.eu-west-2.amazonaws.com/watercolour-travel-pan.jpeg
+
+
+
+Artists’ Oil Colours are an extra fine professional grade Oil colour produced with the highest possible level of pigmentation.
+
+* Ideal for blending and triple-milled to give their rich, buttery consistency also achieved through the use of a unique and natural formula.
+* Each colour within this range offers excellent results with maximum lightfastness and permanence ratings.
+* Compared with most Artists’ Oil ranges the colours offer a slightly shorter drying time which is more consistent across all of the colours.
+* Available in a range of 23 colours in 37ml tubes, 19 of which are produced from single-pure pigments, with Titanium White also available in a large 200ml tube.

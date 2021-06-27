@@ -1,1 +1,147 @@
-<p>admin-products works!</p>
+<!-- add formGroup directive to associate this form with the FormGroup object that we declared in our component -->
+<!-- for the fields, add the formControlName directive to the individual form inputs -->
+<div class="container">
+
+<form [formGroup]="addProductForm" class="add-product-form" #productForm>
+    <div class="form-group">
+        <h3>Add Product</h3>
+        <!-- NAME -->
+        <mat-form-field appearance="fill">
+            <mat-label for="name">Product Name</mat-label>
+            <input 
+                matInput
+                formControlName="name" 
+                id="name" 
+                type="text" 
+                class="form-control">
+        </mat-form-field>
+        <!-- DESCRIPTION -->
+        <mat-form-field appearance="fill">
+            <mat-label for="description">Product Description</mat-label>
+            <input 
+                matInput
+                formControlName="description" 
+                id="description" 
+                type="text" 
+                class="form-control">
+        </mat-form-field>
+        <!-- PRICE -->
+        <mat-form-field appearance="fill">
+            <mat-label for="price">Product Price</mat-label>
+            <input 
+                matInput
+                formControlName="price" 
+                id="price" 
+                type="text" 
+                class="form-control">
+        </mat-form-field>
+        <!-- PRICE WAS -->
+        <mat-form-field appearance="fill">
+            <mat-label for="priceWas">Discounted From Price (opt)</mat-label>
+            <input 
+                matInput
+                formControlName="priceWas" 
+                id="priceWas" 
+                type="text" 
+                class="form-control">
+            </mat-form-field>
+            <!-- PRICE RRP -->
+            <mat-form-field appearance="fill">
+                <mat-label for="priceRRP">Recommended Retail Price (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="priceRRP" 
+                    id="priceRRP" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <!-- PRODUCT CODE -->
+            <mat-form-field appearance="fill">
+                <mat-label for="productCode">Product Code</mat-label>
+                <input 
+                    matInput
+                    formControlName="productCode" 
+                    id="productCode" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <!-- PRODUCT IMAGES -->
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage1">Product Image 1</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage1" 
+                    id="productImage1" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage2">Product Image 2 (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage2" 
+                    id="productImage2" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage3">Product Image 3 (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage3" 
+                    id="productImage3" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage4">Product Image 4 (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage4" 
+                    id="productImage4" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage5">Product Image 5 (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage5" 
+                    id="productImage5" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label for="productImage6">Product Image 6 (opt)</mat-label>
+                <input 
+                    matInput
+                    formControlName="productImage6" 
+                    id="productImage6" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <!-- QUANTITY IN STOCK -->
+            <mat-form-field appearance="fill">
+                <mat-label for="quantityInStock">Quantity In Stock</mat-label>
+                <input 
+                    matInput
+                    formControlName="quantityInStock" 
+                    id="quantityInStock" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+            <!-- RATING -->
+            <mat-form-field appearance="fill">
+                <mat-label for="rating">Rating</mat-label>
+                <input 
+                    matInput
+                    formControlName="rating" 
+                    id="rating" 
+                    type="text" 
+                    class="form-control">
+            </mat-form-field>
+    </div>
+    <button type="submit" mat-raised-button (click)="submitForm()">Add Product</button>
+</form>
+
+</div>

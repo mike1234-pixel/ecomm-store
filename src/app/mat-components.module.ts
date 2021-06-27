@@ -7,9 +7,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatRippleModule } from '@angular/material/core';
-import {MatCardModule} from '@angular/material/card';
-
-
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   exports: [
@@ -22,6 +21,7 @@ import {MatCardModule} from '@angular/material/card';
     MatRippleModule,
     LayoutModule,
     MatCardModule,
+    MatInputModule,
   ]
 })
 export class MatComponentsModule { }

@@ -41,6 +41,7 @@ import { MarkedPipe } from './marked.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { ProductComponent } from './pages/product/product.component';
 import { SlugifyPipe } from './slugify.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -80,6 +81,7 @@ import { SlugifyPipe } from './slugify.pipe';
     MatComponentsModule,
     BrowserAnimationsModule,
     NgReduxModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent},
       { path: 'painting/:product', component: ProductComponent},
