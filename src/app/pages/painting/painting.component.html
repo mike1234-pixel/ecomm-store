@@ -1,63 +1,42 @@
-<div class="container painting-page-container">
+<div class="painting-page">
+    <div class="container">
 
-    <div  *ngIf="paintingProducts.length == 0; then noProducts else productsList"></div>
-    <ng-template #noProducts>
-        No products to show
-    </ng-template>
-    <ng-template #productsList>
-        <h1 class="page-title">Painting Products</h1>
-        <!-- IF THE DATA IS STORED IN REDUX YOU NEED TO USE THE ASYNC PIPE!  -->
-        <div class="grid-container">
-            <div matRipple *ngFor="let product of paintingProducts | async" class="card" [routerLink]="['/painting', product.name | slugify]">
-                <!-- <img src="{{product.productImages[0].src}}" alt="{{product.productImages[0].alt}}"> -->
-                <img src="{{product.productImages[0]}}" alt="{{product.name}}">
-                <h2>{{ product.name }}</h2>
-                <h3 class="card__price">{{ product.price | currency: 'GBP'  }}</h3>
-                <ng-template [ngIf]="product.priceWas">
-                    <span>was: </span>
-                    <h3 class="card__was-price">{{ product.priceWas | currency: 'GBP'  }}</h3>
-                </ng-template>
-                <ng-template [ngIf]="product.priceRRP">
-                    <span>rrp: </span>
-                    <h3 class="card__rrp-price">{{ product.priceRRP | currency: 'GBP'  }}</h3>
-                </ng-template>
-                <hr>
-                <p [innerHTML]="product.description | marked | summary:100"></p>
-                <mat-icon *ngFor="let i of [].constructor( product.rating )" class="card__rating-star-icon">star_border</mat-icon>
-                <div *ngIf="product.quantityInStock > 0" style="position: relative;">
-                    <p class="card__in-stock-text">In Stock </p><mat-icon class="card__in-stock-icon">check</mat-icon>
+        <div  *ngIf="paintingProducts.length == 0; then noProducts else productsList"></div>
+        <ng-template #noProducts>
+            No products to show
+        </ng-template>
+        <ng-template #productsList>
+            <h1 class="page-title">Painting Products</h1>
+            <!-- IF THE DATA IS STORED IN REDUX YOU NEED TO USE THE ASYNC PIPE!  -->
+            <div class="grid-container">
+                <div style="position: relative;" matRipple *ngFor="let product of paintingProducts | async" class="card" [routerLink]="['/painting', product.name | slugify]">
+                    <!-- <img src="{{product.productImages[0].src}}" alt="{{product.productImages[0].alt}}"> -->
+                    <img src="{{product.productImages[0]}}" alt="{{product.name}}">
+                    <h2>{{ product.name }}</h2>
+                    <h3 class="card__price">{{ product.price | currency: 'GBP'  }}</h3>
+                    <ng-template [ngIf]="product.priceWas">
+                        <span>was: </span>
+                        <h3 class="card__was-price">{{ product.priceWas | currency: 'GBP'  }}</h3>
+                    </ng-template>
+                    <ng-template [ngIf]="product.priceRRP">
+                        <span>rrp: </span>
+                        <h3 class="card__rrp-price">{{ product.priceRRP | currency: 'GBP'  }}</h3>
+                    </ng-template>
+                    <hr>
+                    <p [innerHTML]="product.description | marked | summary:100"></p>
+                    <mat-icon *ngFor="let i of [].constructor( product.rating )" class="card__rating-star-icon">star_border</mat-icon>
+                    <div *ngIf="product.quantityInStock > 0" style="position: relative;">
+                        <p class="card__in-stock-text">In Stock </p><mat-icon class="card__in-stock-icon">check</mat-icon>
+                    </div>
+                    <div *ngIf="product.quantityInStock === 0">
+                        <p class="card__in-stock-text">This product is currently not in stock</p>
+                    </div>
+                    <button mat-raised-button>View Product</button>
                 </div>
-                <div *ngIf="product.quantityInStock === 0">
-                    <p class="card__in-stock-text">This product is currently not in stock</p>
-                </div>
             </div>
-        </div>
-    </ng-template>
-        
-        <!-- <div *ngFor="let product of paintingProducts | async">
-            <h4>{{ product.name }}</h4>
-            <p>{{ product.price }}</p>
-            <p>{{ product.priceWas }}</p>
-            <p>{{ product.priceRRP }}</p>
-            <p>{{ product.productCode }}</p> -->
-            <!-- <div *ngFor="let image of product.productImages; index as i">
-                <img src="{{image.src}}" alt="{{image.alt}}" >
-            </div> -->
-            <!-- <img src="{{product.productImages[0].src}}" alt="{{product.productImages[0].alt}}">
-            <p [innerHTML]="product.description | marked | summary:100"></p>
-            <div *ngIf="product.quantityInStock > 0">
-                <p>Product in stock</p>
-                <p>We have {{ product.quantityInStock }} units in stock</p>
-            </div>
-            <div *ngIf="product.quantityInStock === 0">
-                <p>This product is currently not in stock</p>
-            </div>
-            <div>
-                <p>PRODUCT RATING: {{ product.rating }} stars</p>
-            </div>
-        </div>
-    </ng-template> -->
+        </ng-template>
 
+    </div>
 </div>
 
 

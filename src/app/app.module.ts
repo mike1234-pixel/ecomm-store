@@ -42,10 +42,12 @@ import { MatComponentsModule } from './modules/mat-components.module';
 // ---------------------------------------------- services
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { UserService } from './services/user.service';
 // ---------------------------------------------- pipes
 import { MarkedPipe } from './pipes/marked.pipe';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { SlugifyPipe } from './pipes/slugify.pipe';
+
 
 @NgModule({
   declarations: [
@@ -106,7 +108,7 @@ import { SlugifyPipe } from './pipes/slugify.pipe';
 
     ]),
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

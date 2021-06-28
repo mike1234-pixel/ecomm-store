@@ -1,7 +1,12 @@
 @import "../../../styles.scss";
 
-.painting-page-container {
-  background: rgba(173, 67, 22, 0.2);
+.painting-page {
+  background-image: url("../../../assets/bg-img-1.jpg"),
+    linear-gradient(to bottom, white, white);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
 }
 
 .grid-container {
@@ -19,8 +24,9 @@
 
 .card {
   padding: 20px;
-  background: rgba(22, 138, 173, 0.2);
+  background: rgba(22, 138, 173, 0.6);
   cursor: pointer;
+  color: white;
   &:hover {
     transform: scale(1.1);
     transition: all 0.2s;
@@ -42,7 +48,7 @@
   }
   &__was-price,
   &__rrp-price {
-    color: red;
+    color: black;
     text-decoration: line-through;
   }
   p {
@@ -80,5 +86,10 @@
     background: white;
     border-radius: 50px;
     border: 1px solid $color10HEX;
+  }
+  button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
   }
 }

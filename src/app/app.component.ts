@@ -3,6 +3,8 @@ import { NgRedux, select } from "ng2-redux"
 import { IAppState  } from './redux/store';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { SAVE_PAINTING_PRODUCTS } from "./redux/actions"
+import { AuthService } from './services/auth.service'
+import { UserService } from './services/user.service';
 
 
 
@@ -12,11 +14,17 @@ import { SAVE_PAINTING_PRODUCTS } from "./redux/actions"
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnDestroy {
-  title = 'ecomm-store';
+  title = 'arts-store';
   productsPainting: any
   productsPaintingSubscription: any
 
-  constructor(private ngRedux: NgRedux<IAppState>, private firestore: AngularFirestore) {
+  constructor(private userService: UserService, private auth: AuthService, private ngRedux: NgRedux<IAppState>, private firestore: AngularFirestore) {
+    console.log(this.auth.user)
+    
+    if (this.auth.user) {
+        console.log('running')
+        this.userService.save(this.auth.user)
+      }
   } 
 
   ngOnInit() {
@@ -24,7 +32,6 @@ export class AppComponent implements OnDestroy {
     this.productsPaintingSubscription = this.productsPainting.subscribe((res: any)=>{
       // save firestore data to redux
       this.ngRedux.dispatch({ type: SAVE_PAINTING_PRODUCTS , payload: res})
-      console.log(res)
     })     
   }
 

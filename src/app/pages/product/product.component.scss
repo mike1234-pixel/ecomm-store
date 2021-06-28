@@ -1,5 +1,14 @@
 @import "../../../styles.scss";
 
+.product-page {
+  background-image: url("../../../assets/bg-img-2.jpg"),
+    linear-gradient(to bottom, white, white);
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+}
+
 .grid-container {
   display: grid;
   grid-gap: 30px 30px;
@@ -9,7 +18,7 @@
 .product {
   &__title {
     font-weight: 400;
-    margin: 60px 0 15px;
+    padding: 60px 0 15px;
   }
   &__product-code {
     font-size: 16px;
